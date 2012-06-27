@@ -1,0 +1,8 @@
+## Interface: 40300
+## Title: AfterKill
+## Notes: This addon sends a Custom Announcement Message after getting a killing blow on an enemy player.
+## Author: Coote - KT US
+## Version: 0.0.6
+
+
+AfterKill.lua
