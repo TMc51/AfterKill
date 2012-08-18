@@ -23,15 +23,30 @@ local emo = {
 	[8]  = "TAUNT",
 }
 
+local msg
 local tracker
 local playerid
+
+local function CreateMsgFrame()
+		msg = CreateFrame("MessageFrame", "AfterKillMessageFrame", UIParent)
+		msg:SetPoint("LEFT")
+		msg:SetPoint("RIGHT")
+		msg:SetPoint("CENTER")
+		msg:SetHeight(31)
+		msg:SetInsertMode("TOP")
+		msg:SetFrameStrata("HIGH")
+		msg:SetTimeVisible(1)
+		msg:SetFadeDuration(1)
+		msg:SetFont(STANDARD_TEXT_FONT, 30, "OUTLINE")
+end
 
 local function SetUpTracker()
 		tracker = CreateFrame("Frame")
 		tracker:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 		tracker:SetScript("OnEvent", function(_, _, _, event, _, guid, _, _, _, _, destName,  destFlags)
-				if event == "PARTY_KILL" then --and guid==playerid and bit.band(destFlags, COMBATLOG_OBJECT_TYPE_PLAYER) > 0 then
-					--SendChatMessage(trash[random(1,8)], "SAY", NIL)
+				if event == "PARTY_KILL" and guid==playerid and bit.band(destFlags, COMBATLOG_OBJECT_TYPE_PLAYER) > 0 then
+					msg:AddMessage(guid "KB: "..destName, 1, 1, 0)
+					SendChatMessage(trash[random(1,8)], "SAY", NIL)
 					DoEmote(emo[random(1,8)], "none")
 				end
 		end)
