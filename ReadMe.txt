@@ -1,4 +1,4 @@
-Copyright © 2012 T. M. McMahon. All rights reserved.
+Copyright ï¿½ 2012 T. M. McMahon. All rights reserved.
 
 Developed by: T. M. McMahon
 
@@ -26,6 +26,6 @@ Redistribution and use, with or without modification, are permitted provided tha
 
  [a] A Modification must not alter or remove any copyright notices.
 
- [b] Any Distribution of a Modified Package or derivative requires express written consent from Simple Machines.
+ [b] Any Distribution of a Modified Package or derivative requires express written consent from the author.
 
 3. The author reserves the right to change the terms of this Agreement at any time. Changes will not be retroactive to previous releases.
